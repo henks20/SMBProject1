@@ -17,6 +17,9 @@ public class ItemActivity extends AppCompatActivity {
         this.checked = checked;
     }
 
+    public ItemActivity() {
+    }
+
     public void setName(String name) {
         this.name = name;
     }

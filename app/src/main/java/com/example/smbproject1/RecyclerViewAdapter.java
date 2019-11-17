@@ -36,8 +36,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         ItemActivity li = list.get(position);
         holder.name.setText(li.getName());
-        holder.price.setText(li.getPrice());
-        holder.quantity.setText(li.getQuantity());
+        holder.price.setText(li.getPrice()+"");
+        holder.quantity.setText(li.getQuantity()+"");
         if(li.isChecked()){
             holder.bought.setChecked(true);
         } else {

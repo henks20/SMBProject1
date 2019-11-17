@@ -23,7 +23,7 @@
         android:id="@+id/editText"
         android:layout_width="144dp"
         android:layout_height="53dp"
-        android:ems="15"
+        android:ems="45"
         android:hint="@string/sizeHint"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"

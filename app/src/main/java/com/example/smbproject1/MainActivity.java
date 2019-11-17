@@ -10,11 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private Intent listIntent, optionsIntent;
     private String fontColour;
-    private Integer fontSize, color;
+    private Integer fontSize;
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
     private Button btnList, btnOptions;
@@ -27,22 +29,26 @@ public class MainActivity extends AppCompatActivity {
         listIntent = new Intent(this, ListActivity.class);
         optionsIntent = new Intent(this, OptionsActivity.class);
         myDb = new DatabaseHelper(this);
-        sp = getPreferences(Context.MODE_PRIVATE);
-        fontSize = sp.getInt("fontSize", 10);
-        fontColour = sp.getString("fontColour", "Black");
-        color = convertColor(fontColour);
+        sp = getSharedPreferences("project", Context.MODE_PRIVATE);
+        fontSize = sp.getInt("fontSize", 15);
+        fontColour = sp.getString("fontColour", "Czarny");
+        int color = convertColor(fontColour);
         Button btnList = findViewById(R.id.listButton);
         btnList.setTextColor(color);
-        Button btnOptions = findViewById(R.id.optionsButton);
+        btnOptions = findViewById(R.id.optionsButton);
         btnOptions.setTextSize(fontSize);
+
+        List<ItemActivity> list = myDb.getAllItems();
+
+        System.out.println("ile? :" + list.size());
 
     }
 
-    public Integer convertColor (String color) {
-        if(color.equals("Black")) return Color.BLACK;
-        else if(color.equals("Red")) return Color.RED;
-        else if(color.equals("Yellow")) return Color.YELLOW;
-        return null; // musialem dac null bo krzyczal errorem
+    public int convertColor (String color) {
+        if(color.equals("Czarny")) return Color.BLACK;
+        else if(color.equals("Czerwony")) return Color.RED;
+        else if(color.equals("Zolty")) return Color.YELLOW;
+        return -1; // musialem dac null bo krzyczal errorem
     }
 
     @Override
