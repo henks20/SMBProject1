@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SMBProject1</string>
+    <string name="listText">LISTA</string>
+    <string name="optionsText">OPCJE</string>
+    <string name="sizeLabel">Rozmiar</string>
+    <string name="sizeHint">Wpisz rozmiar</string>
+    <string name="colourLabel">Kolor</string>
+    <string name="colourBlack">Czarny</string>
+    <string name="colourRed">Czerwony</string>
+    <string name="colourYellow">Zolty</string>
+    <string name="confirmButtonText">ZAPISZ</string>
+    <string name="itemLabelName">Nazwa</string>
+    <string name="itemLabelPrice">Cena</string>
+    <string name="itemLabelQuantity">Ilosc</string>
+    <string name="itemLabelBought">Zakupiony</string>
+    <string name="saveLabelButton">ZAPISZ</string>
+    <string name="updateLabelButton">EDIT</string>
+    <string name="deleteLabelButton">USUN</string>
+    <string name="listLabel">Shooping List</string>
+</resources>
